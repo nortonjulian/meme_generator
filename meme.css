@@ -22,6 +22,7 @@ h1, h3{
     color: white;
     border-radius: 5px;
     /* position: fixed; */
+    float: right;
     left: 1000px;
     padding: 7px;
     margin: 5px;

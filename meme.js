@@ -1,23 +1,53 @@
-const image = document.querySelector("#image");
-const topText = document.querySelector("#topText");
-const bottomText = document.querySelector("#text");
+const form = document.querySelector('form');
 
-const submit = document.getElementById("button")
+form.addEventListener('submit', Submit)
 
-submit.addEventListener('click', function(e){
-    // const upperText = document.getElementById('topText').value = "";
-    const imageUrl = document.getElementById('image').value
+function Submit(e){
+    e.preventDefault();
 
-    const img = document.createElement('img');
+    let imageURL_element = document.querySelector("#imageURL").value;
+    let topText = document.querySelector("#topText").value;
+    let bottomText = document.querySelector("#bottomText").value;
 
-    img.src = imageUrl
-    // const write = document.createElement('topText')
-    // topText.classList.add("topText");
-    // topText.innerHTML = document.getElementById('topText').value
+    addMeme(imageURL_element, topText, bottomText);
+
+    e.target.reset();
+}
+
+function addMeme(imageURL_element, topText, bottomText){
+    let newDiv = document.createElement('div');
+    newDiv.classList.add('meme');
+
+    let img = document.createElement('img');
+    img.src = imageURL_element;
+    newDiv.appendChild(img);
+
+    let top = document.createElement('p');
+    top.innerText = topText;
+    newDiv.classList.add('top');
+    newDiv.appendChild(top);
+
+    let bottom = document.createElement('p');
+    bottom.innerText = bottomText;
+    newDiv.appendChild(bottom);
+    newDiv.classList.add('bottom');
+    document.getElementById('memes').appendChild(newDiv);
+
+    newDiv.addEventListener('click', Remove)
+}
+
+function Remove(e){
+    e.target.parentElement.remove();
+}
 
 
 
-    document.body.appendChild(img);
+//User clicks on submit button
+    //Retrieve all values user puts in the form
 
-});
+    //create a meme div
 
+    //Create element content such as image tag, paragraph tag
+    //That will be added inside of the meme div
+
+    //Append the meme div

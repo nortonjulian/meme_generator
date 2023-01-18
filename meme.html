@@ -5,28 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="meme.css">
-    <title>Document</title>
+    <title>Meme Generator</title>
 </head>
 <body>
     <h1>I CAN HAZ MEMEZ?</h1>
     <h3>Fill out the form to start creating memes!</h3>
-
-    <form action="https://www.google.com" class="meme-form">
-       <div>
-        <label for="image">Image URL</label>
-        <input type="input" placeholder="What's the URL for your meme image?" id="image">
-       </div>
-       <div>
-        <label for="text">Text On Top</label>
-        <input type="text" placeholder="<Optional> What text do you want at the top of the meme?"  id="toptext">
-       </div>
-       <div>
-        <label for="text">Text On Bottom</label>
-        <input type="text" placeholder="<Optional> What text do you want at the bottom of the meme?" id="text">
-       </div>
+    <form action="">
+      <div>
+        <label for="URL">Image URL</label>
+        <input type="text" class="imageURL" id="imageURL" placeholder="What's the URL for your meme image?" required>
+      </div>
+      <div>
+        <label for="Top">Text on Top</label>
+        <input type="text" class="top" id="topText" placeholder="<Optional>What text do you want on the top?">
+      </div>
+     <div>
+      <label for="Bottom">Text on Bottom</label>
+      <input type="text" class="bottom" id="bottomText" placeholder="<Optional>What text do you want on the bottom?">
+     </div>
+      <input id="button" type="Submit" value="Add Meme">
     </form>
-    <input type="submit" value="Add Meme" id="button">
-    <script src="meme.js"></script>
+    <div id="memes">
+
+    </div>
+  <script src="meme.js"></script>
 </body>
 </html>
-

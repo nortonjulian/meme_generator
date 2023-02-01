@@ -5,29 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="meme.css">
+    <link rel="stylesheet"
+    href="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine.css" />
     <title>Meme Generator</title>
 </head>
 <body>
     <h1>I CAN HAZ MEMEZ?</h1>
     <h3>Fill out the form to start creating memes!</h3>
     <form action="">
-      <div>
+      <div class="form-input">
         <label for="URL">Image URL</label>
         <input type="text" class="imageURL" id="imageURL" placeholder="What's the URL for your meme image?" required>
       </div>
-      <div>
+      <div class="form-input">
         <label for="Top">Text on Top</label>
         <input type="text" class="top" id="topText" placeholder="<Optional>What text do you want on the top?">
       </div>
-     <div>
+     <div class="form-input">
       <label for="Bottom">Text on Bottom</label>
       <input type="text" class="bottom" id="bottomText" placeholder="<Optional>What text do you want on the bottom?">
      </div>
+     <div>
       <input id="button" type="Submit" value="Add Meme">
+     </div>
     </form>
     <div id="memes">
 
     </div>
   <script src="meme.js"></script>
+  <script
+  src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine.js"></script>
+  <script
+    src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/jasmine-html.js"></script>
+  <script
+    src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/boot0.js"></script>
+  <script
+    src="https://unpkg.com/jasmine-core@4.1.0/lib/jasmine-core/boot1.js"></script>
+    <script src="meme.test.js"></script>
 </body>
 </html>

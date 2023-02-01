@@ -3,7 +3,9 @@ const form = document.querySelector('form');
 form.addEventListener('submit', Submit)
 
 function Submit(e){
-    e.preventDefault();
+    if(e){
+        e.preventDefault();
+    }
 
     let imageURL_element = document.querySelector("#imageURL").value;
     let topText = document.querySelector("#topText").value;
@@ -11,16 +13,20 @@ function Submit(e){
 
     addMeme(imageURL_element, topText, bottomText);
 
-    e.target.reset();
+    if(e){
+        e.target.reset();
+    }
 }
 
 function addMeme(imageURL_element, topText, bottomText){
     let newDiv = document.createElement('div');
     newDiv.classList.add('meme');
 
-    let img = document.createElement('img');
-    img.src = imageURL_element;
-    newDiv.appendChild(img);
+    // let img = document.createElement('img');
+    // img.src = imageURL_element;
+    // newDiv.appendChild(img);
+
+    newDiv.style.backgroundImage = `url(${imageURL_element})`
 
     let top = document.createElement('p');
     top.innerText = topText;
